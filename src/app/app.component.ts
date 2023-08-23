@@ -10,11 +10,11 @@ export class AppComponent {
   title = 'rnd-swipe';
 
   constructor(private readonly sheets: TuiSheetDialogService) {
-    // this.sheets
-    //   .open('Content', {
-    //     label: 'Heading',
-    //     offset: 48,
-    //   })
-    //   .subscribe();
+    this.sheets
+      .open('Content', {
+        label: 'Heading',
+        offset: 48,
+      })
+      .subscribe();
   }
 }
