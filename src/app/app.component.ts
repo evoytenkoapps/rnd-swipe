@@ -9,7 +9,7 @@ import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
 export class AppComponent {
   title = 'rnd-swipe';
 
-  constructor( ) {
+  constructor(private readonly sheets: TuiSheetDialogService) {
     // this.sheets
     //   .open('Content', {
     //     label: 'Heading',
