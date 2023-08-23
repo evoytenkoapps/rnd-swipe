@@ -11,7 +11,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {TuiSheetDialogModule} from "@taiga-ui/addon-mobile";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,9 +21,8 @@ import {TuiSheetDialogModule} from "@taiga-ui/addon-mobile";
     TuiRootModule,
     TuiDialogModule,
     TuiAlertModule,
-    TuiSheetDialogModule,
   ],
-  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }, {provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
+  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
