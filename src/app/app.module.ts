@@ -24,7 +24,7 @@ import {TuiSheetDialogModule} from "@taiga-ui/addon-mobile";
     TuiAlertModule,
     TuiSheetDialogModule,
   ],
-  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
+  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }, {provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
