@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
+import { finalize, Subject, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,41 +15,37 @@ import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
 })
 export class AppComponent implements AfterViewInit {
   @ViewChild('savedBankTemplate', { read: TemplateRef })
-  sayHelloTemplate: TemplateRef<any>;
+  savedBankTemplate: TemplateRef<any>;
 
-  @ViewChild('banksTemplate', { read: ElementRef })
-  banksTemplate: ElementRef;
+  @ViewChild('banksTemplate', { read: TemplateRef })
+  banksTemplate: TemplateRef<any>;
+
+  @ViewChild('banksDiv', { read: ElementRef })
+  banksDiv: ElementRef;
 
   isSavedOpened = false;
   isBanksOpened = false;
 
   templateOptions = { stops: [] };
+  showDialog$ = new Subject();
 
   constructor(private readonly sheets: TuiSheetDialogService) {}
 
   ngAfterViewInit(): void {
-    this.sheets
-      .open(this.sayHelloTemplate, {
-        closeable: true,
-        offset: 0,
-        stops: ['10rem'],
-      })
-      .subscribe({
-        next(x) {
-          console.log('got value ' + x);
-        },
-        error(err) {
-          console.error('something wrong occurred: ' + err);
-        },
-        complete() {
-          console.log('done');
-        },
-      });
+    this.showDialog$
+      .pipe(
+        switchMap(() =>
+          this.sheets.open(this.banksTemplate, {
+            closeable: true,
+          }),
+        ),
+      )
+      .subscribe();
   }
 
   onShowBanks() {
-    this.isBanksOpened = true;
     this.isSavedOpened = false;
+    this.showDialog$.next(undefined);
   }
 
   onPay() {
@@ -64,7 +61,7 @@ export class AppComponent implements AfterViewInit {
     this.templateOptions = { stops: ['100rem', '100rem'] };
     console.log(this.templateOptions);
 
-    this.banksTemplate.nativeElement.style.transition = 'height 0.2s ease-out';
-    this.banksTemplate.nativeElement.style.height = '100vh';
+    this.banksDiv.nativeElement.style.transition = 'height 0.2s ease-out';
+    this.banksDiv.nativeElement.style.height = '100vh';
   }
 }

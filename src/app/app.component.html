@@ -14,8 +14,9 @@
   <ng-template
     [(tuiSheetDialog)]="isBanksOpened"
     [tuiSheetDialogOptions]="templateOptions"
+    #banksTemplate
   >
-    <div class="banks" #banksTemplate>
+    <div class="banks" #banksDiv>
       <tui-input
         [tuiTextfieldIconLeft]="'tuiIconSearch'"
         [tuiTextfieldLabelOutside]="true"
