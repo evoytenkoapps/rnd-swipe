@@ -18,12 +18,6 @@ import {
 export class AppComponent implements AfterViewInit {
   @ViewChild('sayHelloTemplate', { read: TemplateRef })
   sayHelloTemplate: TemplateRef<any>;
-  open = false;
-
-  readonly options: Partial<TuiSheetDialogOptions> = {
-    label: 'Alexander Inkin',
-    closeable: false,
-  };
 
   constructor(private readonly sheets: TuiSheetDialogService) {}
 
@@ -32,7 +26,7 @@ export class AppComponent implements AfterViewInit {
       .open('', {
         label: this.sayHelloTemplate,
         closeable: true,
-        offset: 0
+        offset: 0,
       })
       .subscribe();
   }
