@@ -1,4 +1,9 @@
-import {Component, TemplateRef, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import {
   TuiSheetDialogOptions,
   TuiSheetDialogService,
@@ -10,8 +15,9 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
 })
-export class AppComponent {
-  @ViewChild('sayHelloTemplate', { read: TemplateRef }) sayHelloTemplate:TemplateRef<any>;
+export class AppComponent implements AfterViewInit {
+  @ViewChild('sayHelloTemplate', { read: TemplateRef })
+  sayHelloTemplate: TemplateRef<any>;
   open = false;
 
   readonly options: Partial<TuiSheetDialogOptions> = {
@@ -19,10 +25,12 @@ export class AppComponent {
     closeable: false,
   };
 
-  constructor(private readonly sheets: TuiSheetDialogService) {
+  constructor(private readonly sheets: TuiSheetDialogService) {}
+
+  ngAfterViewInit(): void {
     this.sheets
       .open('Content', {
-        label: 'Heading',
+        label: this.sayHelloTemplate,
         offset: 48,
       })
       .subscribe();
