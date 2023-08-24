@@ -29,9 +29,8 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.sheets
-      .open('Content', {
+      .open('', {
         label: this.sayHelloTemplate,
-        offset: 48,
       })
       .subscribe();
   }
