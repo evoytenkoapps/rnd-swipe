@@ -26,7 +26,6 @@ export class AppComponent implements AfterViewInit {
   isSavedOpened = false;
   isBanksOpened = false;
 
-  templateOptions = { stops: [] };
   showDialog$ = new Subject();
 
   constructor(private readonly sheets: TuiSheetDialogService) {}
@@ -57,10 +56,6 @@ export class AppComponent implements AfterViewInit {
   }
 
   onInputClick() {
-    // @ts-ignore
-    this.templateOptions = { stops: ['100rem', '100rem'] };
-    console.log(this.templateOptions);
-
     this.banksDiv.nativeElement.style.transition = 'height 0.2s ease-out';
     this.banksDiv.nativeElement.style.height = '100vh';
   }
