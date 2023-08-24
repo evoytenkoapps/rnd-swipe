@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, TemplateRef, ViewChild} from '@angular/core';
 import {
   TuiSheetDialogOptions,
   TuiSheetDialogService,
@@ -11,6 +11,7 @@ import {
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
+  @ViewChild('sayHelloTemplate', { read: TemplateRef }) sayHelloTemplate:TemplateRef<any>;
   open = false;
 
   readonly options: Partial<TuiSheetDialogOptions> = {
@@ -19,11 +20,11 @@ export class AppComponent {
   };
 
   constructor(private readonly sheets: TuiSheetDialogService) {
-    // this.sheets
-    //   .open('Content', {
-    //     label: 'Heading',
-    //     offset: 48,
-    //   })
-    //   .subscribe();
+    this.sheets
+      .open('Content', {
+        label: 'Heading',
+        offset: 48,
+      })
+      .subscribe();
   }
 }
