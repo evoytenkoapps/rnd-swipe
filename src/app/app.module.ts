@@ -12,9 +12,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TuiSheetDialogModule } from '@taiga-ui/addon-mobile';
+import { TemplateComponent } from './template/template.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TemplateComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
