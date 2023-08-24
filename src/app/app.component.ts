@@ -4,11 +4,7 @@ import {
   TemplateRef,
   ViewChild,
 } from '@angular/core';
-import {
-  TuiSheetDialogOptions,
-  TuiSheetDialogService,
-  TuiSheetOptions,
-} from '@taiga-ui/addon-mobile';
+import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
 
 @Component({
   selector: 'app-root',
