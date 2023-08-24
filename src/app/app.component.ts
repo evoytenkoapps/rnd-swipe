@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
+import {
+  TuiSheetDialogOptions,
+  TuiSheetDialogService,
+  TuiSheetOptions,
+} from '@taiga-ui/addon-mobile';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +11,10 @@ import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  title = 'rnd-swipe';
+  open = false;
 
-  constructor(private readonly sheets: TuiSheetDialogService) {
-
-    this.sheets
-      .open('Content', {
-        label: 'Heading',
-        offset: 48,
-      })
-      .subscribe();
-  }
+  readonly options: Partial<TuiSheetDialogOptions> = {
+    label: 'Alexander Inkin',
+    closeable: false,
+  };
 }
