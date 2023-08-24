@@ -15,16 +15,23 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('sayHelloTemplate', { read: TemplateRef })
   sayHelloTemplate: TemplateRef<any>;
 
+  isOpened = false;
+
   constructor(private readonly sheets: TuiSheetDialogService) {}
 
   ngAfterViewInit(): void {
-    this.sheets
-      .open(this.sayHelloTemplate, {
-        closeable: true,
-        offset: 0,
-      })
-      .subscribe();
+    // this.sheets
+    //   .open(this.sayHelloTemplate, {
+    //     closeable: true,
+    //     offset: 0,
+    //   })
+    //   .subscribe();
   }
 
   onShowBanks() {}
+
+  onPay() {
+    console.log(this.isOpened);
+    this.isOpened = !this.isOpened;
+  }
 }

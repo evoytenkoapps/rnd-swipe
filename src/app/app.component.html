@@ -1,5 +1,7 @@
 <tui-root>
-  <ng-template #sayHelloTemplate>
+  <button tuiButton (click)="onPay()">Оплатить СБП</button>
+
+  <ng-template #sayHelloTemplate [(tuiSheetDialog)]="isOpened">
     <div class="base">
       <a tuiLink class="bank-link" (click)="onShowBanks()"
         >Показать все банки</a
