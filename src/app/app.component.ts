@@ -19,8 +19,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.sheets
-      .open('', {
-        label: this.sayHelloTemplate,
+      .open(this.sayHelloTemplate, {
         closeable: true,
         offset: 0,
       })
