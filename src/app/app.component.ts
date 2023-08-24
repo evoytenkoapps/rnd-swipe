@@ -12,7 +12,7 @@ import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('sayHelloTemplate', { read: TemplateRef })
+  @ViewChild('savedBankTemplate', { read: TemplateRef })
   sayHelloTemplate: TemplateRef<any>;
 
   isSavedOpened = false;
