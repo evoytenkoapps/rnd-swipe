@@ -2,7 +2,9 @@
   <button tuiButton type="button" (click)="open = true">Show</button>
   <ng-template #sayHelloTemplate>
     <div class="base">
-      <p>Say Hello</p>
+      <a tuiLink class="bank-link" (click)="onShowBanks()"
+        >Показать все банки</a
+      >
     </div>
   </ng-template>
 </tui-root>
