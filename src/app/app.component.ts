@@ -16,6 +16,7 @@ export class AppComponent implements AfterViewInit {
   sayHelloTemplate: TemplateRef<any>;
 
   isSavedOpened = false;
+  isBanksOpened = false;
 
   constructor(private readonly sheets: TuiSheetDialogService) {}
 
@@ -28,7 +29,10 @@ export class AppComponent implements AfterViewInit {
     //   .subscribe();
   }
 
-  onShowBanks() {}
+  onShowBanks() {
+    this.isBanksOpened = true;
+    this.isSavedOpened = false;
+  }
 
   onPay() {
     this.isSavedOpened = !this.isSavedOpened;
