@@ -12,6 +12,14 @@
   </ng-template>
 
   <ng-template #banksTemplate [(tuiSheetDialog)]="isBanksOpened">
-    <div class="banks"></div>
+    <div class="banks">
+      <tui-input
+        [tuiTextfieldIconLeft]="'tuiIconSearch'"
+        [tuiTextfieldLabelOutside]="true"
+        [tuiTextfieldCleaner]="true"
+      >
+        Найдите банк
+      </tui-input>
+    </div>
   </ng-template>
 </tui-root>

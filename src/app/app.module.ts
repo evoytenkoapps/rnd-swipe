@@ -5,7 +5,7 @@ import {
   TuiButtonModule,
   TuiDialogModule,
   TuiLinkModule,
-  TuiRootModule,
+  TuiRootModule, TuiTextfieldControllerModule,
 } from '@taiga-ui/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TuiSheetDialogModule, TuiSheetModule } from '@taiga-ui/addon-mobile';
 import { TemplateComponent } from './template/template.component';
+import {TuiInputModule} from "@taiga-ui/kit";
 
 @NgModule({
   declarations: [AppComponent, TemplateComponent],
@@ -29,6 +30,8 @@ import { TemplateComponent } from './template/template.component';
     TuiButtonModule,
     TuiSheetModule,
     TuiLinkModule,
+    TuiInputModule,
+    TuiTextfieldControllerModule,
   ],
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],
