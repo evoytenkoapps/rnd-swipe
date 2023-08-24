@@ -31,7 +31,8 @@ export class AppComponent implements AfterViewInit {
     this.sheets
       .open('', {
         label: this.sayHelloTemplate,
-        closeable: true
+        closeable: true,
+        offset: 0
       })
       .subscribe();
   }
