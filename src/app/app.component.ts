@@ -28,6 +28,8 @@ export class AppComponent implements AfterViewInit {
 
   showDialog$ = new Subject();
 
+  bankList = ['Первый', 'Первый', 'Первый', 'Первый', 'Первый'];
+
   constructor(private readonly sheets: TuiSheetDialogService) {}
 
   ngAfterViewInit(): void {

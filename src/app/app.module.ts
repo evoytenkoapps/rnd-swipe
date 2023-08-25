@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { TuiSheetDialogModule, TuiSheetModule } from '@taiga-ui/addon-mobile';
 import { TemplateComponent } from './template/template.component';
 import {TuiInputModule} from "@taiga-ui/kit";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [AppComponent, TemplateComponent],
@@ -32,6 +33,7 @@ import {TuiInputModule} from "@taiga-ui/kit";
     TuiLinkModule,
     TuiInputModule,
     TuiTextfieldControllerModule,
+    CommonModule
   ],
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],
