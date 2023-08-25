@@ -1,6 +1,13 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, TemplateRef, ViewChild,} from '@angular/core';
-import {TuiSheetDialogService} from '@taiga-ui/addon-mobile';
-import {Subject, switchMap} from 'rxjs';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
+import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
+import { Subject, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
