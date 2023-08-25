@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   TemplateRef,
@@ -7,11 +8,13 @@ import {
 } from '@angular/core';
 import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
 import { finalize, Subject, switchMap } from 'rxjs';
+import { ChangeDetection } from '@angular/cli/lib/config/workspace-schema';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements AfterViewInit {
   @ViewChild('savedBankTemplate', { read: TemplateRef })
