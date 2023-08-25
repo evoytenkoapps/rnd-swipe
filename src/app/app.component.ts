@@ -25,6 +25,9 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('banksDiv', { read: ElementRef })
   banksDiv: ElementRef;
 
+  @ViewChild('bankListDiv', { read: ElementRef })
+  bankListDiv: ElementRef;
+
   isSavedOpened = false;
   isBanksOpened = false;
 

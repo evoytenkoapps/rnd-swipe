@@ -21,7 +21,7 @@
       >
         Найдите банк
       </tui-input>
-      <div class="bank-list">
+      <div class="bank-list" #bankListDiv>
         <app-template
           *ngFor="let bank of bankList"
           [userName]="bank"
