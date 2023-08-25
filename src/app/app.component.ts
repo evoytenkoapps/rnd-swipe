@@ -28,18 +28,7 @@ export class AppComponent implements AfterViewInit {
 
   showDialog$ = new Subject();
 
-  bankList = [
-    'Первый',
-    'Первый',
-    'Первый',
-    'Первый',
-    'Первый',
-    'Первый',
-    'Первый',
-    'Первый',
-    'Первый',
-    'Первый',
-  ];
+  bankList = [...Array(120)].map((name, index) => 'Банк номер ' + (index + 1));
 
   constructor(private readonly sheets: TuiSheetDialogService) {}
 
