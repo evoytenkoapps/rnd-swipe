@@ -1,20 +1,21 @@
-import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
+import {NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
 import {
   TUI_SANITIZER,
   TuiAlertModule,
   TuiButtonModule,
   TuiDialogModule,
   TuiLinkModule,
-  TuiRootModule, TuiTextfieldControllerModule,
+  TuiRootModule,
+  TuiTextfieldControllerModule,
 } from '@taiga-ui/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TuiSheetDialogModule, TuiSheetModule } from '@taiga-ui/addon-mobile';
-import { TemplateComponent } from './template/template.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {TuiSheetDialogModule, TuiSheetModule} from '@taiga-ui/addon-mobile';
+import {TemplateComponent} from './template/template.component';
 import {TuiInputModule} from "@taiga-ui/kit";
 import {CommonModule} from "@angular/common";
 
