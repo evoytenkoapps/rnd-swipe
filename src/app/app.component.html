@@ -12,26 +12,24 @@
   </ng-template>
 
   <ng-template [(tuiSheetDialog)]="isBanksOpened" #banksTemplate>
-    <div class="main">
-      <tui-input
-        class="bank-search"
-        [tuiTextfieldIconLeft]="'tuiIconSearch'"
-        [tuiTextfieldLabelOutside]="true"
-        [tuiTextfieldCleaner]="true"
-        (click)="onInputClick()"
-        [formControl]="inputFormControl"
-      >
-        Найдите банк
-      </tui-input>
-      <div class="bank-list" #bankListDiv>
-        <app-template
-          *ngFor="let bank of bankList"
-          [userName]="bank"
-        ></app-template>
-      </div>
-      <div class="button-bottom">
-        <button tuiButton>Оплатить в приложении</button>
-      </div>
+    <tui-input
+      class="bank-search"
+      [tuiTextfieldIconLeft]="'tuiIconSearch'"
+      [tuiTextfieldLabelOutside]="true"
+      [tuiTextfieldCleaner]="true"
+      (click)="onInputClick()"
+      [formControl]="inputFormControl"
+    >
+      Найдите банк
+    </tui-input>
+    <div class="bank-list" #bankListDiv>
+      <app-template
+        *ngFor="let bank of bankList"
+        [userName]="bank"
+      ></app-template>
+    </div>
+    <div class="button-bottom">
+      <button tuiButton>Оплатить в приложении</button>
     </div>
   </ng-template>
 </tui-root>
