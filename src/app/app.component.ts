@@ -56,11 +56,10 @@ export class AppComponent implements AfterViewInit, OnInit {
       .subscribe();
 
     this.inputFormControl.valueChanges.subscribe((value) => {
-      console.log(value);
       if (value) {
-        this.bankList = this.bankList.filter((bank) => {
-          return bank.toLocaleLowerCase().startsWith(value.toLocaleLowerCase());
-        });
+        this.bankList = this.bankListOriginal.filter((bank) =>
+          bank.toLocaleLowerCase().startsWith(value.toLocaleLowerCase()),
+        );
       }
       if (value === '') {
         this.bankList = [...this.bankListOriginal];
