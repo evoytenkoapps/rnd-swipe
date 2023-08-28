@@ -82,10 +82,14 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
 
   onInputClick() {
+    console.log('onInputClick');
     // // this.banksDiv.nativeElement.style.transition = 'height 0.2s ease-out';
     // this.banksDiv.nativeElement.style.height = 'calc(100vh - 56px)';
-    // // this.bankListDiv.nativeElement.style.transition = 'height 0.2s ease-out';
-    // this.bankListDiv.nativeElement.style.height = '548px';
+    this.bankListDiv.nativeElement.style.transition = 'height 0.2s ease-out';
+    // this.bankListDiv.nativeElement.style.height =
+    //   'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 216px);';
+    this.bankListDiv.nativeElement.style.height =
+      'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 216px)';
   }
 
   ngOnInit(): void {
