@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  OnInit,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
@@ -16,7 +17,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./app.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnInit {
   @ViewChild('savedBankTemplate', { read: TemplateRef })
   savedBankTemplate: TemplateRef<any>;
 
@@ -85,5 +86,26 @@ export class AppComponent implements AfterViewInit {
     // this.banksDiv.nativeElement.style.height = 'calc(100vh - 56px)';
     // // this.bankListDiv.nativeElement.style.transition = 'height 0.2s ease-out';
     // this.bankListDiv.nativeElement.style.height = '548px';
+  }
+
+  ngOnInit(): void {
+    /*
+       На мобильных браузерах в высоту вьюпорта вставляется адерсная строка, что мешает верстке
+       https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+      */
+    const mobileViewPortHeight = window.innerHeight * 0.01;
+    const viewPortPropName = 'pf-mobileViewPortHeight';
+
+    this.addCssProperty(viewPortPropName, mobileViewPortHeight);
+
+    // Чтобы не лагала верстка в мобильном браузере когда прячется адресная строка
+    window.addEventListener('resize', () => {
+      alert("resize")
+      this.addCssProperty(viewPortPropName, mobileViewPortHeight);
+    });
+  }
+
+  private addCssProperty(name: string, px: number) {
+    document.documentElement.style.setProperty(`--${name}`, `${px}px`);
   }
 }
