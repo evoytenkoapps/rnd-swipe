@@ -43,7 +43,6 @@ export class AppComponent implements AfterViewInit {
         switchMap(() =>
           this.sheets.open(this.banksTemplate, {
             closeable: true,
-            stops: ['500px'], // 280 + 56 + 24
           }),
         ),
       )
