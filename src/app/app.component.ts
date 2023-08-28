@@ -34,7 +34,10 @@ export class AppComponent implements AfterViewInit {
 
   showDialog$ = new Subject();
 
-  bankList = [...Array(120)].map((name, index) => 'Банк номер ' + (index + 1));
+  bankListOriginal = [...Array(120)].map(
+    (name, index) => 'Банк номер ' + (index + 1),
+  );
+  bankList = [...this.bankListOriginal];
 
   inputFormControl = new FormControl('');
 
@@ -52,10 +55,14 @@ export class AppComponent implements AfterViewInit {
       .subscribe();
 
     this.inputFormControl.valueChanges.subscribe((value) => {
+      console.log(value);
       if (value) {
         this.bankList = this.bankList.filter((el) => {
           el.toLocaleLowerCase().startsWith(value.toLocaleLowerCase());
         });
+      }
+      if (value === '') {
+        this.bankList = [...this.bankListOriginal];
       }
     });
   }
