@@ -100,7 +100,6 @@ export class AppComponent implements AfterViewInit, OnInit {
 
     // Чтобы не лагала верстка в мобильном браузере когда прячется адресная строка
     window.addEventListener('resize', () => {
-      alert("resize")
       this.addCssProperty(viewPortPropName, mobileViewPortHeight);
     });
   }
