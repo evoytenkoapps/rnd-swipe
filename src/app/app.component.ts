@@ -22,8 +22,8 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('banksTemplate', { read: TemplateRef })
   banksTemplate: TemplateRef<any>;
 
-  @ViewChild('banksDiv', { read: ElementRef })
-  banksDiv: ElementRef;
+  // @ViewChild('banksDiv', { read: ElementRef })
+  // banksDiv: ElementRef;
 
   @ViewChild('bankListDiv', { read: ElementRef })
   bankListDiv: ElementRef;
