@@ -1,15 +1,15 @@
-.main {
-  display: block;
-
-  /*
-    На мобильных браузерах в высоту вьюпорта вставляется адерсная строка, что мешает верстке
-    https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-    */
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(
-    var(--pf-mobileViewPortHeight, 1vh) * 100
-  ); /* stylelint-disable-line custom-property-pattern */
-}
+//.main {
+//  display: block;
+//
+//  /*
+//    На мобильных браузерах в высоту вьюпорта вставляется адерсная строка, что мешает верстке
+//    https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+//    */
+//  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+//  height: calc(
+//    var(--pf-mobileViewPortHeight, 1vh) * 100
+//  ); /* stylelint-disable-line custom-property-pattern */
+//}
 
 .saved {
   height: 238px;
@@ -29,7 +29,7 @@ bank-link {
 }
 
 .bank-list {
-  height: calc(100% - 236px);
+  height: calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 216px);
   overflow-y: auto;
   margin-top: 12px;
 }
