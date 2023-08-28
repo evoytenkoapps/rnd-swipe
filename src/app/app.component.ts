@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
 import { Subject, switchMap } from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,8 @@ export class AppComponent implements AfterViewInit {
 
   bankList = [...Array(120)].map((name, index) => 'Банк номер ' + (index + 1));
 
+  inputFormControl = new FormControl('');
+
   constructor(private readonly sheets: TuiSheetDialogService) {}
 
   ngAfterViewInit(): void {
@@ -47,6 +50,14 @@ export class AppComponent implements AfterViewInit {
         ),
       )
       .subscribe();
+
+    this.inputFormControl.valueChanges.subscribe((value) => {
+      if (value) {
+        this.bankList = this.bankList.filter((el) => {
+          el.toLocaleLowerCase().startsWith(value.toLocaleLowerCase());
+        });
+      }
+    });
   }
 
   onShowBanks() {

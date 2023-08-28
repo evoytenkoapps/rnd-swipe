@@ -18,24 +18,26 @@ import { TuiSheetDialogModule, TuiSheetModule } from '@taiga-ui/addon-mobile';
 import { TemplateComponent } from './template/template.component';
 import { TuiInputModule } from '@taiga-ui/kit';
 import { CommonModule } from '@angular/common';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent, TemplateComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    TuiRootModule,
-    TuiDialogModule,
-    TuiAlertModule,
-    TuiSheetDialogModule,
-    TuiButtonModule,
-    TuiSheetModule,
-    TuiLinkModule,
-    TuiInputModule,
-    TuiTextfieldControllerModule,
-    CommonModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        TuiRootModule,
+        TuiDialogModule,
+        TuiAlertModule,
+        TuiSheetDialogModule,
+        TuiButtonModule,
+        TuiSheetModule,
+        TuiLinkModule,
+        TuiInputModule,
+        TuiTextfieldControllerModule,
+        CommonModule,
+        ReactiveFormsModule,
+    ],
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],
 })
