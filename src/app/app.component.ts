@@ -83,7 +83,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   onInputClick() {
     console.log('onInputClick');
     this.mainContent.nativeElement.style.height =
-      'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 70px)';
+      'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 85px)';
   }
 
   ngOnInit(): void {
