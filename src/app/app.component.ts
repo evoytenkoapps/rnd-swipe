@@ -11,7 +11,7 @@ import {
 import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
 import { Subject, switchMap } from 'rxjs';
 import { FormControl } from '@angular/forms';
-import { TUI_IS_ANDROID, TUI_IS_IOS } from '@taiga-ui/cdk';
+import { TUI_IS_IOS } from '@taiga-ui/cdk';
 
 @Component({
   selector: 'app-root',
@@ -41,11 +41,9 @@ export class AppComponent implements AfterViewInit, OnInit {
   constructor(
     private readonly sheets: TuiSheetDialogService,
     @Inject(TUI_IS_IOS) private readonly isIos: boolean,
-    @Inject(TUI_IS_ANDROID) private readonly isAndroid: boolean,
   ) {}
 
   ngAfterViewInit(): void {
-    console.log('isa', this.isAndroid, 'isi', this.isIos);
     this.showDialog$
       .pipe(
         switchMap(() =>
