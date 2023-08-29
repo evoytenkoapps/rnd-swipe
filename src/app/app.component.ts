@@ -65,6 +65,7 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.bankList = [...this.bankListOriginal];
       }
     });
+    alert(window.innerHeight)
   }
 
   onShowBanks() {
