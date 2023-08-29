@@ -11,6 +11,14 @@
 //  ); /* stylelint-disable-line custom-property-pattern */
 //}
 
+//  (var(--pf-mobileViewPortHeight, 1vh) * 100) - (12px + 20px + 16px)
+
+.main-content {
+  height: calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 122px);
+  display: flex;
+  flex-direction: column;
+}
+
 .saved {
   height: 238px;
   width: 100%;
@@ -29,8 +37,8 @@ bank-link {
 }
 
 .bank-list {
-  height: 80px; //calc((var(--pf-mobileViewPortHeight, 1vh) * 1) + (280px - 1vh));
-  overflow-y: auto;
+  height: calc(100% - 76px); //12px - 56px - 8px);
+  overflow-y: scroll;
   margin-top: 12px;
 }
 

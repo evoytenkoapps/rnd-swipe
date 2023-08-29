@@ -27,8 +27,8 @@ export class AppComponent implements AfterViewInit, OnInit {
   // @ViewChild('banksDiv', { read: ElementRef })
   // banksDiv: ElementRef;
 
-  @ViewChild('bankListDiv', { read: ElementRef })
-  bankListDiv: ElementRef;
+  @ViewChild('mainContent', { read: ElementRef })
+  mainContent: ElementRef;
 
   isSavedOpened = false;
   isBanksOpened = false;
@@ -87,8 +87,8 @@ export class AppComponent implements AfterViewInit, OnInit {
     // this.bankListDiv.nativeElement.style.transition = 'height 0.2s ease-out';
     // this.bankListDiv.nativeElement.style.height =
     //   'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 216px);';
-    this.bankListDiv.nativeElement.style.height =
-      'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 216px)';
+    this.mainContent.nativeElement.style.height =
+      'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 48px)';
   }
 
   ngOnInit(): void {
