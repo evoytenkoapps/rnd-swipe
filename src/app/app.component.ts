@@ -65,7 +65,6 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.bankList = [...this.bankListOriginal];
       }
     });
-    alert(window.innerHeight)
   }
 
   onShowBanks() {
@@ -89,7 +88,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     // this.bankListDiv.nativeElement.style.height =
     //   'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 216px);';
     this.mainContent.nativeElement.style.height =
-      'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 48px)';
+      'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 48px);';
   }
 
   ngOnInit(): void {
