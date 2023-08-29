@@ -20,14 +20,8 @@ import { TUI_IS_ANDROID, TUI_IS_IOS } from '@taiga-ui/cdk';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements AfterViewInit, OnInit {
-  @ViewChild('savedBankTemplate', { read: TemplateRef })
-  savedBankTemplate: TemplateRef<any>;
-
   @ViewChild('banksTemplate', { read: TemplateRef })
   banksTemplate: TemplateRef<any>;
-
-  // @ViewChild('banksDiv', { read: ElementRef })
-  // banksDiv: ElementRef;
 
   @ViewChild('mainContent', { read: ElementRef })
   mainContent: ElementRef;
