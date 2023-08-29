@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  Inject,
   OnInit,
   TemplateRef,
   ViewChild,
@@ -10,6 +11,7 @@ import {
 import { TuiSheetDialogService } from '@taiga-ui/addon-mobile';
 import { Subject, switchMap } from 'rxjs';
 import { FormControl } from '@angular/forms';
+import { TUI_IS_ANDROID, TUI_IS_IOS } from '@taiga-ui/cdk';
 
 @Component({
   selector: 'app-root',
@@ -42,9 +44,14 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   inputFormControl = new FormControl('');
 
-  constructor(private readonly sheets: TuiSheetDialogService) {}
+  constructor(
+    private readonly sheets: TuiSheetDialogService,
+    @Inject(TUI_IS_IOS) private readonly isIos: boolean,
+    @Inject(TUI_IS_ANDROID) private readonly isAndroid: boolean,
+  ) {}
 
   ngAfterViewInit(): void {
+    console.log('isa', this.isAndroid, 'isi', this.isIos);
     this.showDialog$
       .pipe(
         switchMap(() =>
@@ -82,8 +89,9 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   onInputClick() {
     console.log('onInputClick');
-    this.mainContent.nativeElement.style.height =
-      'calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - 85px)';
+    this.mainContent.nativeElement.style.height = `calc((var(--pf-mobileViewPortHeight, 1vh) * 100) - ${
+      this.isIos ? '85px' : '48px'
+    })`;
   }
 
   ngOnInit(): void {
